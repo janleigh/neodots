@@ -19,11 +19,6 @@ bg("VertSplit", colors.bg)
 fg("EndOfBuffer", colors.bg)
 vim.cmd("hi StatusLineNC gui=underline guibg=NONE guifg=" .. colors.bgAlt)
 
--- Bufferline
-bg("BufferLineFill", "NONE")
-bg("BufferLineSeparator", "NONE")
-fg("BufferLineSeparator", colors.bgAlt)
-
 -- coc.nvim
 fg("CocErrorSign", colors.red)
 fg("CocWarningSign", colors.yellow)
@@ -51,12 +46,15 @@ bg("FloatermBorder", colors.bg)
 
 -- NvimTree
 fg("NvimTreeFolderIcon", colors.blue)
+fg("NvimTreeFolderName", colors.blue)
+fg("NvimTreeOpenedFolderName", colors.blue)
+fg("NvimTreeEmptyFolderName", colors.blue)
 fg("NvimTreeFileDirty", colors.red)
 fg("NvimTreeGitDirty", colors.red)
 fg("NvimTreeRootFolder", colors.blue)
 fg("NvimTreeIndentMarker", colors.fgAlt2)
 bg("NvimTreeNormal", colors.bgAlt)
 fgbg("NvimTreeVertSplit", colors.bg, colors.bg)
-fgbg("NvimTreeStatusLine", colors.bgAlt, colors.bg)
+fgbg("NvimTreeStatusLine", colors.bg, colors.bg)
 fgbg("NvimTreeEndOfBuffer", colors.bgAlt, colors.bgAlt)
 vim.cmd("hi NvimTreeStatusLineNC gui=underline guifg=" .. colors.bgAlt .. " guibg=" .. colors.bg)

@@ -1,11 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""
-"             GENERAL CONFIGURATION             "
-"""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Set encoding
-set encoding=utf8
-
-" Set cursor
+" Fix cursor
 set guicursor=
 
 " Initialize packer.nvim

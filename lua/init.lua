@@ -13,9 +13,7 @@ async =
             require "plugins"
             require "plugins.bufferline"
 
-            require "highlights"
             require "mappings"
-
             async:close()
         end
     )

@@ -7,6 +7,8 @@ vim.cmd([[
 ]])
 
 g.mapleader = ","
+g.encoding = "utf8"
+g.guicursor = " "
 opt.ruler = false
 opt.showmode = false
 opt.termguicolors = true

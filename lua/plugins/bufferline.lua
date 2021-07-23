@@ -3,6 +3,7 @@ local colors = require("colors")
 
 bufferline.setup {
     options = {
+        offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
         indicator_icon = "█",
 
         buffer_close_icon = "",
@@ -14,7 +15,7 @@ bufferline.setup {
     },
     highlights = {
         fill = {
-            guibg = colors.bgAlt
+            guibg = colors.bg
         },
 
         -- Buffer
