@@ -13,7 +13,12 @@
 
 ### ❖ Installation
 
-   `Soon! <3` 
+   * First, install [packer.nvim](https://github.com/wbthomason/packer.nvim).
+   * Then, clone this repo to `$XDG_CONFIG_home/nvim`.
+   ```
+     $ git clone https://github.com/TheRealKizu/neodots $HOME/.config/nvim
+   ```
+   * Run `:PackerSync` and `:PackerCompile` and your good to go.
 
 ### ❖ Keymap
 
