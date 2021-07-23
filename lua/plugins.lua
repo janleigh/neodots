@@ -3,17 +3,23 @@ local use = packer.use
 
 return packer.startup(
     function()
-        use { "wbthomason/packer.nvim", event = "VimEnter" }
-
-        -- LSP
         use {
-            "neovim/nvim-lspconfig",
-            config = function()
-                require "plugins.lspconfig"
-            end
+            "wbthomason/packer.nvim",
+            event = "VimEnter"
         }
 
-        use { "onsails/lspkind-nvim" }
+        -- Programming Languages
+        use { "neoclide/coc.nvim" }
+
+        use { "rust-lang/rust.vim" }
+
+        -- Git
+        use {
+            "lewis6991/gitsigns.nvim",
+            config = function()
+                require("gitsigns").setup{}
+            end
+        }
 
         -- GUI Plugins
         use { "akinsho/nvim-bufferline.lua" }
@@ -38,5 +44,33 @@ return packer.startup(
                 require "plugins.nvim-tree"
             end
         }
+
+        use {
+            "nvim-telescope/telescope.nvim",
+            requires = {{ "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" }},
+            config = function()
+                require "plugins.telescope"
+            end
+        }
+
+        use {
+            "kyazdani42/nvim-web-devicons",
+            config = function()
+            end
+        }
+
+        -- Miscellaneous
+        use {
+            "norcalli/nvim-base16.lua",
+            requires = {{ "norcalli/nvim.lua" }}
+        }
+
+        use { "voldikss/vim-floaterm" }
+
+        use { "jiangmiao/auto-pairs" }
+
+        use { "alec-gibson/nvim-tetris" }
+
+        use { "tweekmonster/startuptime.vim" }
     end
 )

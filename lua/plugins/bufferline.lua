@@ -6,7 +6,6 @@ bufferline.setup {
         indicator_icon = "█",
 
         buffer_close_icon = "",
-        show_buffer_close_icons = false,
         show_close_icon = false,
 
         max_name_length = 14,
@@ -14,7 +13,7 @@ bufferline.setup {
         tab_size = 20,
     },
     highlights = {
-        background = {
+        fill = {
             guibg = colors.bgAlt
         },
 
@@ -28,14 +27,20 @@ bufferline.setup {
         },
 
         -- Tabs
+        tab_close = {
+            guifg = colors.red,
+            guibg = colors.bgAlt2
+        },
         modified_selected = {
             guifg = colors.red,
-            guibg = colors.bgAlt
+            guibg = colors.bgAlt2
         },
         modified_visible = {
-            guifg = colors.red
+            guifg = colors.red,
+            guibg = colors.bg
         },
         indicator_selected = {
+            guifg = colors.fgAlt2,
             guibg = colors.bg
         },
 

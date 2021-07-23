@@ -10,7 +10,9 @@ local colors = {
 
     -- Alternative colors
     bgAlt = "#282828",
-    bgAlt2 = "#32302f"
+    bgAlt2 = "#32302f",
+    fgAlt = "#ebdbb2",
+    fgAlt2 = "#bdae93"
 }
 
 return colors

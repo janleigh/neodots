@@ -15,12 +15,12 @@ end
 
 bg("LineNr", colors.bg)
 bg("SignColumn", colors.bg)
+bg("VertSplit", colors.bg)
 fg("EndOfBuffer", colors.bg)
 vim.cmd("hi StatusLineNC gui=underline guibg=NONE guifg=" .. colors.bgAlt)
 
 -- Bufferline
 bg("BufferLineFill", "NONE")
-bg("BufferLineCloseButtonSelected", colors.bgAlt)
 bg("BufferLineSeparator", "NONE")
 fg("BufferLineSeparator", colors.bgAlt)
 
@@ -29,7 +29,10 @@ fg("CocErrorSign", colors.red)
 fg("CocWarningSign", colors.yellow)
 fg("CocInfoSign", colors.blue)
 fg("CocHintSign", colors.cyan)
-fg("CocHintLine", colors.bg)
+
+-- LSP
+fg("LspDiagnosticsSignHint", colors.magenta)
+fg("LspDiagnosticsVirtualTextHint", colors.magenta)
 
 -- Dashboard
 fg("DashboardHeader", dbFg)
@@ -47,9 +50,11 @@ fgbg("GitSignsDelete", colors.red, colors.bg)
 bg("FloatermBorder", colors.bg)
 
 -- NvimTree
+fg("NvimTreeFolderIcon", colors.blue)
 fg("NvimTreeFileDirty", colors.red)
 fg("NvimTreeGitDirty", colors.red)
 fg("NvimTreeRootFolder", colors.blue)
+fg("NvimTreeIndentMarker", colors.fgAlt2)
 bg("NvimTreeNormal", colors.bgAlt)
 fgbg("NvimTreeVertSplit", colors.bg, colors.bg)
 fgbg("NvimTreeStatusLine", colors.bgAlt, colors.bg)

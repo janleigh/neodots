@@ -1,4 +1,3 @@
--- Credits to: siduck76
 local function map(mode, lhs, rhs, opts)
     local options = { noremap = true, silent = true }
     if opts then
@@ -32,7 +31,7 @@ map("n", "<Leader>tt", ":FloatermToggle<CR>", opt)
 
 -- nvim-tree
 map("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
-map("n", "<F6>", ":NvimTreeRefresh", opt)
+map("n", "<F6>", ":NvimTreeRefresh<CR>", opt)
 
 -- Telescope
 map("n", "<Leader>ff", ":Telescope find_files<CR>", opt)
