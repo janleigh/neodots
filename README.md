@@ -18,7 +18,7 @@
    ```
      $ git clone https://github.com/TheRealKizu/neodots $HOME/.config/nvim
    ```
-   * Run `:PackerSync` and `:PackerCompile` and your good to go.
+   * Run `:PackerSync` and restart nvim.
 
 ### ❖ Keymap
 
@@ -26,4 +26,4 @@
 
 ### ❖ Credits
 
-   * [NvChad](https://github.com/siduck76/NvChad) for some functions used in the config.
+   * [siduck76/NvChad](https://github.com/siduck76/NvChad) for some functions used in the config.
