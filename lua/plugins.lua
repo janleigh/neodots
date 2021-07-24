@@ -9,9 +9,10 @@ return packer.startup(
         }
 
         -- Programming Languages
-        use { "neoclide/coc.nvim" }
-
-        use { "rust-lang/rust.vim" }
+        use {
+            "neoclide/coc.nvim",
+            branch = "release",
+        }
 
         -- Git
         use {
@@ -56,6 +57,7 @@ return packer.startup(
         use {
             "kyazdani42/nvim-web-devicons",
             config = function()
+                require "plugins.icons"
             end
         }
 
@@ -68,8 +70,6 @@ return packer.startup(
         use { "voldikss/vim-floaterm" }
 
         use { "jiangmiao/auto-pairs" }
-
-        use { "alec-gibson/nvim-tetris" }
 
         use { "tweekmonster/startuptime.vim" }
     end

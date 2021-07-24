@@ -2,13 +2,12 @@ local opt = vim.opt
 local g = vim.g
 
 vim.cmd([[
+    set guicursor=
     filetype plugin on
-    filetype indent on
 ]])
 
 g.mapleader = ","
 g.encoding = "utf8"
-g.guicursor = " "
 opt.ruler = false
 opt.showmode = false
 opt.termguicolors = true

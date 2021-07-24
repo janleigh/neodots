@@ -9,6 +9,10 @@ end
 
 local opt = {  }
 
+vim.cmd([[
+    inoremap <silent><expr> <c-space> coc#refresh()
+]])
+
 -- ESC for turning off highlight search
 map("n", "<Esc>", ":noh<CR>", opt)
 
@@ -36,6 +40,3 @@ map("n", "<F6>", ":NvimTreeRefresh<CR>", opt)
 -- Telescope
 map("n", "<Leader>ff", ":Telescope find_files<CR>", opt)
 map("n", "<Leader>gt", ":Telescope git_status<CR>", opt)
-
--- Tetris
-map("n", "<F10>", ":Tetris<CR>", opt)

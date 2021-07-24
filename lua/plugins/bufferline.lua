@@ -37,7 +37,7 @@ bufferline.setup {
         },
         modified_visible = {
             guifg = colors.red,
-            guibg = colors.bg
+            guibg = colors.bgAlt
         },
         indicator_selected = {
             guifg = colors.fgAlt2,
