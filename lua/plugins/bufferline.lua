@@ -3,7 +3,8 @@ local colors = require("colors")
 
 bufferline.setup {
     options = {
-        indicator_icon = "█",
+        offsets = {{ filetype = "NvimTree", text = "", padding = 1, highlight = "Directory" }},
+        indicator_icon = "",
 
         buffer_close_icon = "",
         show_close_icon = false,

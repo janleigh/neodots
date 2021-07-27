@@ -10,7 +10,7 @@ gl.short_line_list = { "NvimTree" }
 gls.left[1] = {
     StartBorder = {
         provider = function()
-            return "█"
+            return "▊"
         end,
         highlight = { colors.cyan, colors.bgAlt }
     }
@@ -136,7 +136,7 @@ gls.right[8] = {
 gls.right[9] = {
     EndBorder = {
         provider = function()
-            return "█"
+            return "▊"
         end,
         highlight = { colors.cyan, colors.bg }
     }

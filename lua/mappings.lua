@@ -15,6 +15,11 @@ vim.cmd([[
 
 -- ESC for turning off highlight search
 map("n", "<Esc>", ":noh<CR>", opt)
+map("v", "<Esc>", ":noh<CR>", opt)
+
+-- Open terminal
+map("n", "<Leader>ta", ":vsplit term://zsh<CR>", opt)
+map("n", "<Leader>tc", ":split term://zsh<CR>", opt)
 
 -- Split windows
 map("n", "<C-a>", ":vsplit<CR>", opt)
