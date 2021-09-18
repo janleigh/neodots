@@ -10,7 +10,7 @@ vim.cmd([[
 g.mapleader = ","
 g.encoding = "utf8"
 opt.ruler = false
-opt.showmode = true
+opt.showmode = false
 opt.termguicolors = true
 opt.mouse = "a"
 opt.number = true
