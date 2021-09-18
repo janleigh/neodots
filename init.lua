@@ -5,12 +5,16 @@ async =
     vim.loop.new_async(
         vim.schedule_wrap(
             function ()
-                require "theme"
-
-                require "plugins"
-                require "plugins.bufferline"
+                require "plugins.init"
+                require "plugins.configs.bufferline"
 
                 require "mappings"
+
+                require "theme"
+
+                require "highlights"
+
+                require("impatient").enable_profile()
                 async:close()
             end
         )

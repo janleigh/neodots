@@ -1,4 +1,20 @@
-local colors = require("colors")
+local theme = require("theme")
+local colors = theme.colors
+
+-- Colors
+local _bg = colors.bg
+local bgAlt = colors.bgAlt
+local bgAlt2 = colors.bgAlt2
+local _fg = colors.fg
+local fgAlt2 = colors.bgAlt2
+
+local red = colors.red
+local green = colors.green
+local yellow = colors.yellow
+local blue = colors.blue
+local magenta = colors.magenta
+local cyan = colors.cyan
+
 local dbFg = "#a89984"
 
 local function fg(group, color)
@@ -13,21 +29,28 @@ local function fgbg(group, fgcol, bgcol)
     vim.cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
 end
 
-bg("LineNr", colors.bg)
-bg("SignColumn", colors.bg)
-bg("VertSplit", colors.bg)
-fg("EndOfBuffer", colors.bg)
-vim.cmd("hi StatusLineNC gui=underline guibg=NONE guifg=" .. colors.bgAlt)
+-- Italic Comments
+vim.cmd("hi Comment gui=italic")
+
+bg("LineNr", _bg)
+bg("SignColumn", _bg)
+bg("VertSplit", _bg)
+fg("EndOfBuffer", _bg)
+vim.cmd("hi StatusLineNC gui=underline guibg=NONE guifg=" .. bgAlt)
+
+-- CursorLine
+vim.cmd("hi clear CursorLine")
+fgbg("CursorLineNr", colors.base04, _bg)
 
 -- coc.nvim
-fg("CocErrorSign", colors.red)
-fg("CocWarningSign", colors.yellow)
-fg("CocInfoSign", colors.blue)
-fg("CocHintSign", colors.cyan)
+fg("CocErrorSign", red)
+fg("CocWarningSign", yellow)
+fg("CocInfoSign", blue)
+fg("CocHintSign", cyan)
 
 -- LSP
-fg("LspDiagnosticsSignHint", colors.magenta)
-fg("LspDiagnosticsVirtualTextHint", colors.magenta)
+fg("LspDiagnosticsSignHint", magenta)
+fg("LspDiagnosticsVirtualTextHint", magenta)
 
 -- Dashboard
 fg("DashboardHeader", dbFg)
@@ -36,26 +59,33 @@ fg("DashboardShortcut", dbFg)
 fg("DashboardFooter", dbFg)
 
 -- GitSigns
-fgbg("GitSignsAdd", colors.green, colors.bg)
-fgbg("GitSignsChange", colors.blue, colors.bg)
-fgbg("GitSignsChangeDelete", colors.red, colors.bg)
-fgbg("GitSignsDelete", colors.red, colors.bg)
+fgbg("GitSignsAdd", green, _bg)
+fgbg("GitSignsChange", blue, _bg)
+fgbg("GitSignsChangeDelete", red, _bg)
+fgbg("GitSignsDelete", red, _bg)
+
+-- Indent
+fg("IndentBlanklineChar", bgAlt)
 
 -- Floaterm
-bg("FloatermBorder", colors.bg)
+bg("FloatermBorder", _bg)
 
 -- NvimTree
-fg("NvimTreeFolderIcon", colors.blue)
-fg("NvimTreeFolderName", colors.blue)
-fg("NvimTreeOpenedFolderName", colors.blue)
-fg("NvimTreeEmptyFolderName", colors.blue)
-fg("NvimTreeFileDirty", colors.red)
-fg("NvimTreeExecFile", colors.fg)
-fg("NvimTreeGitDirty", colors.red)
-fg("NvimTreeRootFolder", colors.blue)
-fg("NvimTreeIndentMarker", colors.fgAlt2)
-bg("NvimTreeNormal", colors.bgAlt)
-fgbg("NvimTreeVertSplit", colors.bg, colors.bg)
-fgbg("NvimTreeStatusLine", colors.bg, colors.bg)
-fgbg("NvimTreeEndOfBuffer", colors.bgAlt, colors.bgAlt)
-vim.cmd("hi NvimTreeStatusLineNC gui=underline guifg=" .. colors.bgAlt .. " guibg=" .. colors.bg)
+fg("NvimTreeFolderIcon", blue)
+fg("NvimTreeFolderName", blue)
+fg("NvimTreeOpenedFolderName", blue)
+fg("NvimTreeEmptyFolderName", blue)
+fg("NvimTreeFileDirty", red)
+fg("NvimTreeExecFile", _fg)
+fg("NvimTreeGitDirty", red)
+fg("NvimTreeGitDeleted", red)
+fg("NvimTreeRootFolder", blue)
+fg("NvimTreeIndentMarker", fgAlt2)
+bg("NvimTreeNormal", bgAlt)
+fgbg("NvimTreeVertSplit", _bg, _bg)
+fgbg("NvimTreeStatusLine", _bg, _bg)
+fgbg("NvimTreeEndOfBuffer", bgAlt, bgAlt)
+vim.cmd("hi NvimTreeStatusLineNC gui=underline guifg=" .. bgAlt .. " guibg=" .. _bg)
+
+-- Telescope
+fg("TelescopeBorder", bgAlt2)

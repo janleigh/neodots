@@ -17,6 +17,9 @@ vim.cmd([[
 map("n", "<Esc>", ":noh<CR>", opt)
 map("v", "<Esc>", ":noh<CR>", opt)
 
+-- Copy to xclip
+map("v", "<F7>", ":w !xclip -i -sel c", opt)
+
 -- Open terminal
 map("n", "<Leader>ta", ":vsplit term://zsh<CR>", opt)
 map("n", "<Leader>tc", ":split term://zsh<CR>", opt)

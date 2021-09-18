@@ -3,12 +3,12 @@ local use = packer.use
 
 return packer.startup(
     function()
+        use { "lewis6991/impatient.nvim" }
+
         use {
             "wbthomason/packer.nvim",
             event = "VimEnter"
         }
-
-        use { "lewis6991/impatient.nvim" }
 
         -- Programming Languages
         use {
@@ -21,7 +21,8 @@ return packer.startup(
             "lewis6991/gitsigns.nvim",
             config = function()
                 require("gitsigns").setup{}
-            end
+            end,
+            opt = true
         }
 
         -- GUI Plugins
@@ -30,21 +31,21 @@ return packer.startup(
         use {
             "glepnir/galaxyline.nvim",
             config = function()
-                require "plugins.statusline"
+                require "plugins.configs.statusline"
             end
         }
 
         use {
             "glepnir/dashboard-nvim",
             config = function()
-                require "plugins.dashboard"
+                require "plugins.configs.dashboard"
             end
         }
 
         use {
             "kyazdani42/nvim-tree.lua",
             config = function()
-                require "plugins.nvim-tree"
+                require "plugins.configs.nvim-tree"
             end
         }
 
@@ -52,14 +53,14 @@ return packer.startup(
             "nvim-telescope/telescope.nvim",
             requires = {{ "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" }},
             config = function()
-                require "plugins.telescope"
+                require "plugins.configs.telescope"
             end
         }
 
         use {
             "kyazdani42/nvim-web-devicons",
             config = function()
-                require "plugins.icons"
+                require "plugins.configs.devicons"
             end
         }
 
@@ -70,11 +71,30 @@ return packer.startup(
         }
 
         use {
-            "lukas-reineke/indent-blankline.nvim"
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate",
+            config = function ()
+                require("nvim-treesitter.configs").setup {
+                    highlight = {
+                        enable = true
+                    }
+                }
+            end
         }
 
         use {
-            "norcalli/nvim-colorizer.lua"
+            "norcalli/nvim-colorizer.lua",
+            event = "BufRead",
+            config = function ()
+                require("colorizer").setup({ "*" }, {
+                    RGB = true,
+                    RRGGBB = true,
+                    css = true,
+
+                    mode = "background"
+                })
+                vim.cmd "ColorizerReloadAllBuffers"
+            end
         }
 
         use { "elkowar/yuck.vim" }

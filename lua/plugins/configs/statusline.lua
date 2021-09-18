@@ -1,5 +1,5 @@
-local colors = require("colors")
-
+local theme = require("theme")
+local colors = theme.colors
 local gl = require("galaxyline")
 local gls = gl.section
 
@@ -54,6 +54,14 @@ gls.left[3] = {
     }
 }
 
+gls.left[4] = {
+    GitBranch = {
+        provider = "GitBranch",
+        condition = require("galaxyline.condition").check_git_workspace,
+        highlight = { colors.fg, colors.bg }
+    }
+}
+
 local checkwidth = function()
     local squeeze_width = vim.fn.winwidth(0) / 2
     if squeeze_width > 30 then
@@ -98,14 +106,6 @@ gls.right[4] = {
 }
 
 gls.right[5] = {
-    GitBranch = {
-        provider = "GitBranch",
-        condition = require("galaxyline.condition").check_git_workspace,
-        highlight = { colors.fg, colors.bg }
-    }
-}
-
-gls.right[6] = {
     FileIcon = {
         provider = "FileIcon",
         condition = condition.buffer_not_empty,
@@ -115,15 +115,17 @@ gls.right[6] = {
     }
 }
 
-gls.right[7] = {
+gls.right[6] = {
     FileName = {
         provider = "FileName",
         condition = condition.buffer_not_empty,
+        separator = " ",
+        separator_highlight = { colors.bgAlt, colors.bgAlt },
         highlight = { colors.fg, colors.bgAlt }
     }
 }
 
-gls.right[8] = {
+gls.right[7] = {
     LineColumn = {
         provider = "LineColumn",
         condition = condition.buffer_not_empty,
@@ -133,7 +135,7 @@ gls.right[8] = {
     }
 }
 
-gls.right[9] = {
+gls.right[8] = {
     EndBorder = {
         provider = function()
             return "▊"

@@ -1,15 +1,16 @@
-local opt = vim.opt
 local g = vim.g
+local opt = vim.opt
 
 vim.cmd([[
     set guicursor=
+    set cursorline
     filetype plugin on
 ]])
 
 g.mapleader = ","
 g.encoding = "utf8"
 opt.ruler = false
-opt.showmode = false
+opt.showmode = true
 opt.termguicolors = true
 opt.mouse = "a"
 opt.number = true
