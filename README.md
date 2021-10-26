@@ -7,8 +7,8 @@
 </div>
 
 <div align="center">
-    <img src="https://cdn.kizu.cf/u/vNKuYhh.png">
-    <img src="https://cdn.kizu.cf/u/v0Gue8N.png">
+    <img src="https://cdn.xndr.tech/u/vNKuYhh.png">
+    <img src="https://cdn.xndr.tech/u/v0Gue8N.png">
 </div>
 
 ### ❖ Installation
