@@ -55,6 +55,17 @@ bufferline.setup {
             guibg = colors.bg
         },
 
+        -- Duplicate
+        duplicate = {
+            guibg = colors.bg
+        },
+        duplicate_visible = {
+            guibg = colors.bgAlt
+        },
+        duplicate_selected = {
+            guibg = colors.bgAlt2
+        },
+
         -- Close Button
         close_button = {
             guifg = colors.red,

@@ -3,7 +3,14 @@ local use = packer.use
 
 return packer.startup(
     function()
-        use { "lewis6991/impatient.nvim" }
+        -- Core
+        use {
+            "lewis6991/impatient.nvim",
+            config = {
+                -- Move to lua dir so impatient.nvim can cache it
+                compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua'
+            }
+        }
 
         use {
             "wbthomason/packer.nvim",
@@ -94,6 +101,27 @@ return packer.startup(
                     mode = "background"
                 })
                 vim.cmd "ColorizerReloadAllBuffers"
+            end
+        }
+
+        use {
+            "lukas-reineke/indent-blankline.nvim",
+            config = function ()
+                require("indent_blankline").setup {
+                    filetype_exclude = {
+                        "dashboard",
+                        "packer",
+                        "TelescopePrompt",
+                        "TelescopeResults"
+                    }
+                }
+                end
+        }
+
+        use {
+            "LionC/nest.nvim",
+            config = function ()
+                require "plugins.configs.nest"
             end
         }
 
