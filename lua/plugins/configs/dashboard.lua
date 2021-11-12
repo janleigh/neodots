@@ -28,7 +28,3 @@ g.dashboard_custom_section = {
     b = { description = { "洛 New File                  SPC f n" }, command = "DashboardNewFile" },
     c = { description = { "  Quit Neovim                 SPC q" }, command = "q!" }
 }
-
-g.dashboard_custom_footer = {
-    "nvim v0.6.0"
-}

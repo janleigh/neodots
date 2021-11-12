@@ -5,7 +5,6 @@ vim.cmd([[
     set guicursor=
     set cursorline
     filetype plugin off
-    inoremap <silent><expr> <c-space> coc#refresh()
 ]])
 
 -- General stuff
@@ -16,7 +15,8 @@ opt.showmode = false
 opt.termguicolors = true
 opt.mouse = "a"
 opt.number = true
-opt.shortmess= "c"
+opt.shortmess = "c"
+opt.completeopt = "menuone,noinsert"
 opt.updatetime = 300
 
 -- Indent

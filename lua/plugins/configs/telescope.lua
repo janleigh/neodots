@@ -18,5 +18,6 @@ ts.setup {
             preview_cutoff = 120,
         },
         borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+        file_ignore_patterns = { "node_modules", "dist", "target", ".git" }
     }
 }

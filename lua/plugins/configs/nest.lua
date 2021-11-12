@@ -15,7 +15,10 @@ nest.applyKeymaps {
 
         -- nvim-tree
         { "<C-n>", ":NvimTreeToggle<CR>" },
-        { "<S-n>", ":NvimTreeRefresh<CR>" }
+        { "<S-n>", ":NvimTreeRefresh<CR>" },
+
+        -- lspconfig
+        { "<Space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>" }
     }},
 
     { mode = "v", {

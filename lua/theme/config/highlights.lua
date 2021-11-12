@@ -1,4 +1,4 @@
-local theme = require("theme")
+local theme = require("theme.config.theme")
 local colors = theme.colors
 
 -- Colors
@@ -42,12 +42,6 @@ vim.cmd("hi StatusLineNC gui=underline guibg=NONE guifg=" .. bgAlt)
 vim.cmd("hi clear CursorLine")
 fgbg("CursorLineNr", colors.base04, _bg)
 
--- coc.nvim
-fg("CocErrorSign", red)
-fg("CocWarningSign", yellow)
-fg("CocInfoSign", blue)
-fg("CocHintSign", cyan)
-
 -- LSP
 fg("LspDiagnosticsSignHint", magenta)
 fg("LspDiagnosticsVirtualTextHint", magenta)
@@ -89,3 +83,5 @@ vim.cmd("hi NvimTreeStatusLineNC gui=underline guifg=" .. bgAlt .. " guibg=" .. 
 
 -- Telescope
 fg("TelescopeBorder", bgAlt2)
+
+vim.cmd("hi typescriptParens guibg=none")

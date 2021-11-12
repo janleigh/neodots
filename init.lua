@@ -8,8 +8,7 @@ async =
                 require "plugins.init"
                 require "plugins.configs.bufferline"
 
-                require "theme"
-                require "highlights"
+                require "theme.init"
 
                 require("impatient").enable_profile()
                 async:close()

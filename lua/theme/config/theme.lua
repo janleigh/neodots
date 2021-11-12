@@ -28,19 +28,19 @@ theme.colors = {
     base07 = "#fbf1c7"
 }
 
-function stripHash(hex)
+function strip_hash(hex)
     return hex:gsub("#", "")
 end
 
 local c = theme.colors
-local b00 = stripHash(c.base00)
-local b01 = stripHash(c.base01)
-local b02 = stripHash(c.base02)
-local b03 = stripHash(c.base03)
-local b04 = stripHash(c.base04)
-local b05 = stripHash(c.base05)
-local b06 = stripHash(c.base06)
-local b07 = stripHash(c.base07)
+local b00 = strip_hash(c.base00)
+local b01 = strip_hash(c.base01)
+local b02 = strip_hash(c.base02)
+local b03 = strip_hash(c.base03)
+local b04 = strip_hash(c.base04)
+local b05 = strip_hash(c.base05)
+local b06 = strip_hash(c.base06)
+local b07 = strip_hash(c.base07)
 
 -- Set neovim theme.
 base16.themes["neodots"] = {

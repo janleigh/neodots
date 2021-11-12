@@ -8,7 +8,7 @@ return packer.startup(
             "lewis6991/impatient.nvim",
             config = {
                 -- Move to lua dir so impatient.nvim can cache it
-                compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua'
+                compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua"
             }
         }
 
@@ -17,10 +17,62 @@ return packer.startup(
             event = "VimEnter"
         }
 
-        -- Programming Languages
+        use { "neovim/nvim-lspconfig" }
+
         use {
-            "neoclide/coc.nvim",
-            branch = "release",
+            "williamboman/nvim-lsp-installer",
+            config = function ()
+                require "plugins.configs.lspconfig"
+            end
+        }
+
+        use {
+            "rafamadriz/friendly-snippets",
+            event = "InsertEnter"
+        }
+
+        use {
+            "hrsh7th/nvim-cmp",
+            config = function ()
+                require "plugins.configs.completion"
+            end,
+            after = "friendly-snippets"
+        }
+
+        use {
+            "L3MON4D3/LuaSnip",
+            wants = "friendly-snippets",
+            after = "nvim-cmp",
+            config = function ()
+                local luasnip = require("luasnip")
+
+                require("luasnip/loaders/from_vscode").load { path = "~/.local/share/nvim/site/pack/packer/opt/friendly-snippets" }
+                require("luasnip/loaders/from_vscode").load()
+            end
+        }
+
+        use {
+            "hrsh7th/cmp-nvim-lsp",
+            after = "nvim-cmp"
+        }
+
+        use {
+            "hrsh7th/cmp-nvim-lua",
+            after = "cmp-nvim-lsp"
+        }
+
+        use {
+            "hrsh7th/cmp-buffer",
+            after = "cmp-nvim-lua"
+        }
+
+        use {
+            "hrsh7th/cmp-path",
+            after = "cmp-buffer"
+        }
+
+        use {
+            "onsails/lspkind-nvim"
         }
 
         -- Git
@@ -126,11 +178,8 @@ return packer.startup(
         }
 
         use { "elkowar/yuck.vim" }
-
         use { "voldikss/vim-floaterm" }
-
-        use { "jiangmiao/auto-pairs" }
-
+        use { "windwp/nvim-autopairs" }
         use { "tweekmonster/startuptime.vim" }
     end
 )

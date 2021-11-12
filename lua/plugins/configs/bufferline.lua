@@ -1,5 +1,5 @@
 local bufferline = require("bufferline")
-local theme = require("theme")
+local theme = require("theme.config.theme")
 local colors = theme.colors
 
 bufferline.setup {
