@@ -18,7 +18,10 @@ nest.applyKeymaps {
         { "<S-n>", ":NvimTreeRefresh<CR>" },
 
         -- lspconfig
-        { "<Space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>" }
+        { "<Space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>" },
+
+        -- copilot
+        { "<C-j>", "copilot#Accept('<CR>')" }
     }},
 
     { mode = "v", {

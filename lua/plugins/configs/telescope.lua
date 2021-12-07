@@ -2,6 +2,11 @@ local ts = require("telescope")
 
 ts.setup {
     defaults = {
+        vimgrep_arguments = {
+            "rg",
+            "--no-heading",
+            "--smart-case"
+        },
         prompt_prefix = " ",
         selection_caret = " ",
         layout_config = {
@@ -18,6 +23,6 @@ ts.setup {
             preview_cutoff = 120,
         },
         borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-        file_ignore_patterns = { "node_modules", "dist", "target", ".git" }
+        file_ignore_patterns = { "node_modules", "build", "dist", "target", ".git" }
     }
 }

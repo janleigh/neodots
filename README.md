@@ -2,13 +2,13 @@
 
 <div align="center">
 
-   my neovim config. now in lua.
+   <code>neodots</code> ~ my neovim config. now in lua.
 
 </div>
 
 <div align="center">
-    <img src="https://cdn.xndr.tech/u/CgOwl1H.png">
-    <img src="https://cdn.xndr.tech/u/43SwwoR.png">
+    <img src="https://cdn.xndr.tech/u/wJ46w6l.png">
+    <img src="https://cdn.xndr.tech/u/ih9V0vr.png">
 </div>
 
 ### ❖ Installation

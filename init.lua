@@ -10,7 +10,6 @@ async =
 
                 require "theme.init"
 
-                require("impatient").enable_profile()
                 async:close()
             end
         )

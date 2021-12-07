@@ -7,7 +7,7 @@ local servers = {
 }
 
 -- Sumneko Lua server path.
-local sumneko_root_path = vim.fn.stdpath("data") .. "/lsp_servers/sumneko_lua"
+-- local sumneko_root_path = vim.fn.stdpath("data") .. "/lsp_servers/sumneko_lua"
 
 lsp_installer.on_server_ready(function (server)
     local opts = {
@@ -17,11 +17,13 @@ lsp_installer.on_server_ready(function (server)
 
     local server_opts = {
         ["sumneko_lua"] = function ()
+            --[[
             opts.cmd = {
                 sumneko_root_path .. "/extension/server/bin/Linux/lua-language-server",
                 "-E",
                 sumneko_root_path .. "/extension/server/main.lua"
             }
+            ]]
             opts.settings = {
                 Lua = {
                     runtime = {

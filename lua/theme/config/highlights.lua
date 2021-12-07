@@ -40,7 +40,7 @@ vim.cmd("hi StatusLineNC gui=underline guibg=NONE guifg=" .. bgAlt)
 
 -- CursorLine
 vim.cmd("hi clear CursorLine")
-fgbg("CursorLineNr", colors.base04, _bg)
+fgbg("CursorLineNr", colors.base06, _bg)
 
 -- LSP
 fg("LspDiagnosticsSignHint", magenta)
@@ -74,12 +74,12 @@ fg("NvimTreeExecFile", _fg)
 fg("NvimTreeGitDirty", red)
 fg("NvimTreeGitDeleted", red)
 fg("NvimTreeRootFolder", blue)
-fg("NvimTreeIndentMarker", fgAlt2)
-bg("NvimTreeNormal", bgAlt)
+fg("NvimTreeIndentMarker", _fg)
+bg("NvimTreeNormal", bgAlt2)
 fgbg("NvimTreeVertSplit", _bg, _bg)
 fgbg("NvimTreeStatusLine", _bg, _bg)
-fgbg("NvimTreeEndOfBuffer", bgAlt, bgAlt)
-vim.cmd("hi NvimTreeStatusLineNC gui=underline guifg=" .. bgAlt .. " guibg=" .. _bg)
+fgbg("NvimTreeEndOfBuffer", bgAlt2, bgAlt2)
+vim.cmd("hi NvimTreeStatusLineNC gui=underline guifg=" .. bgAlt2 .. " guibg=" .. _bg)
 
 -- Telescope
 fg("TelescopeBorder", bgAlt2)

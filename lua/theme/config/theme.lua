@@ -2,33 +2,33 @@ local base16 = require("base16")
 local theme = {  }
 
 theme.colors = {
-    bg = "#1d2021",
-    fg = "#fbf1c7",
-    red = "#ea6962",
-    green = "#a9b665",
-    yellow = "#ffc745",
-    blue = "#7daea3",
-    magenta = "#93869b",
-    cyan = "#89b482",
+    bg = "#101415",
+    fg = "#C5C8C9",
+    red = "#f65b5b",
+    green = "#8dc776",
+    yellow = "#e7ac7e",
+    blue = "#84a0c6",
+    magenta = "#bb8fe5",
+    cyan = "#89b8c2",
 
     -- Alternative colors
-    bgAlt = "#282828",
-    bgAlt2 = "#32302f",
-    fgAlt = "#ebdbb2",
-    fgAlt2 = "#bdae93",
+    bgAlt = "#101415",
+    bgAlt2 = "#131718",
+    fgAlt = "#c4c4c4",
+    fgAlt2 = "#b7b8b8",
 
     -- Base16
-    base00 = "#1d2021",
-    base01 = "#3c3836",
-    base02 = "#504945",
-    base03 = "#665c54",
-    base04 = "#bdae93",
-    base05 = "#d5c4a1",
-    base06 = "#ebdbb2",
-    base07 = "#fbf1c7"
+    base00 = "#101415",
+    base01 = "#26292a",
+    base02 = "#3e4141",
+    base03 = "#6e7071",
+    base04 = "#6e7071",
+    base05 = "#9fa0a0",
+    base06 = "#b7b8b8",
+    base07 = "#C5C8C9"
 }
 
-function strip_hash(hex)
+local function strip_hash(hex)
     return hex:gsub("#", "")
 end
 
@@ -41,13 +41,19 @@ local b04 = strip_hash(c.base04)
 local b05 = strip_hash(c.base05)
 local b06 = strip_hash(c.base06)
 local b07 = strip_hash(c.base07)
+local b08 = strip_hash(c.red)
+local b09 = strip_hash(c.yellow)
+local b0B = strip_hash(c.green)
+local b0C = strip_hash(c.blue)
+local b0D = strip_hash(c.magenta)
+local b0E = strip_hash(c.cyan)
 
 -- Set neovim theme.
 base16.themes["neodots"] = {
     base00 = b00; base01 = b01; base02 = b02; base03 = b03;
     base04 = b04; base05 = b05; base06 = b06; base07 = b07;
-    base08 = "ea6962"; base09 = "e0b34c"; base0A = "d48049"; base0B = "a9b665";
-    base0C = "7daea3"; base0D = "d3869b"; base0E = "89b482"; base0F = "d65d0e";
+    base08 = b08; base09 = b09; base0A = "e79c61"; base0B = b0B;
+    base0C = b0C; base0D = b0D; base0E = b0E; base0F = "d65d0e";
 }
 
 base16(base16.themes["neodots"], true)

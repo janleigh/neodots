@@ -36,3 +36,6 @@ opt.incsearch = true
 -- Go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>hl"
+
+-- Disable Tab on copilot
+g.copilot_no_tab_map = true

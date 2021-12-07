@@ -5,14 +5,6 @@ return packer.startup(
     function()
         -- Core
         use {
-            "lewis6991/impatient.nvim",
-            config = {
-                -- Move to lua dir so impatient.nvim can cache it
-                compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua"
-            }
-        }
-
-        use {
             "wbthomason/packer.nvim",
             event = "VimEnter"
         }
@@ -44,8 +36,6 @@ return packer.startup(
             wants = "friendly-snippets",
             after = "nvim-cmp",
             config = function ()
-                local luasnip = require("luasnip")
-
                 require("luasnip/loaders/from_vscode").load { path = "~/.local/share/nvim/site/pack/packer/opt/friendly-snippets" }
                 require("luasnip/loaders/from_vscode").load()
             end
@@ -80,12 +70,13 @@ return packer.startup(
             "lewis6991/gitsigns.nvim",
             config = function()
                 require("gitsigns").setup{}
-            end,
-            opt = true
+            end
         }
 
         -- GUI Plugins
-        use { "akinsho/nvim-bufferline.lua" }
+        use {
+            "akinsho/nvim-bufferline.lua"
+        }
 
         use {
             "glepnir/galaxyline.nvim",
@@ -177,9 +168,10 @@ return packer.startup(
             end
         }
 
-        use { "elkowar/yuck.vim" }
+        use { "elkowar/yuck.vim", opt = true }
         use { "voldikss/vim-floaterm" }
-        use { "windwp/nvim-autopairs" }
+        use { "cohama/lexima.vim" }
+        use { "andweeb/presence.nvim" }
         use { "tweekmonster/startuptime.vim" }
     end
 )

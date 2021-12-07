@@ -89,7 +89,7 @@ gls.right[2] = {
         provider = "DiffAdd",
         condition = checkwidth,
         icon = " ",
-        highlight = { colors.green, colors.bg }
+        highlight = { colors.green, colors.bgAlt2 }
     }
 }
 
@@ -98,7 +98,7 @@ gls.right[3] = {
         provider = "DiffModified",
         condition = checkwidth,
         icon = " ",
-        highlight = { colors.yellow, colors.bg }
+        highlight = { colors.yellow, colors.bgAlt2 }
     }
 }
 
@@ -107,7 +107,7 @@ gls.right[4] = {
         provider = "DiffRemove",
         condition = checkwidth,
         icon = " ",
-        highlight = { colors.red, colors.bg }
+        highlight = { colors.red, colors.bgAlt2 }
     }
 }
 
