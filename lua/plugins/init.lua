@@ -9,26 +9,29 @@ return packer.startup(
             event = "VimEnter"
         }
 
-        use { "neovim/nvim-lspconfig" }
+        use { "lewis6991/impatient.nvim" }
 
+        -- LSP and autocompletion
         use {
-            "williamboman/nvim-lsp-installer",
+            "hrsh7th/nvim-cmp",
+            requires = {
+                -- LSP
+                "neovim/nvim-lspconfig",
+
+                -- Miscellaneous
+                "hrsh7th/cmp-nvim-lsp",
+                "hrsh7th/cmp-buffer",
+                "hrsh7th/cmp-path",
+                "onsails/lspkind-nvim"
+            },
             config = function ()
-                require "plugins.configs.lspconfig"
+                require "plugins.configs.completion"
             end
         }
 
         use {
             "rafamadriz/friendly-snippets",
             event = "InsertEnter"
-        }
-
-        use {
-            "hrsh7th/nvim-cmp",
-            config = function ()
-                require "plugins.configs.completion"
-            end,
-            after = "friendly-snippets"
         }
 
         use {
@@ -42,27 +45,11 @@ return packer.startup(
         }
 
         use {
-            "hrsh7th/cmp-nvim-lsp",
-            after = "nvim-cmp"
-        }
-
-        use {
-            "hrsh7th/cmp-nvim-lua",
-            after = "cmp-nvim-lsp"
-        }
-
-        use {
-            "hrsh7th/cmp-buffer",
-            after = "cmp-nvim-lua"
-        }
-
-        use {
-            "hrsh7th/cmp-path",
-            after = "cmp-buffer"
-        }
-
-        use {
-            "onsails/lspkind-nvim"
+            "williamboman/nvim-lsp-installer",
+            after = "nvim-cmp",
+            config = function ()
+                require "plugins.configs.lspconfig"
+            end
         }
 
         -- Git
@@ -74,9 +61,7 @@ return packer.startup(
         }
 
         -- GUI Plugins
-        use {
-            "akinsho/nvim-bufferline.lua"
-        }
+        use { "akinsho/nvim-bufferline.lua" }
 
         use {
             "glepnir/galaxyline.nvim",
@@ -168,10 +153,34 @@ return packer.startup(
             end
         }
 
-        use { "elkowar/yuck.vim", opt = true }
+        use {
+            "rcarriga/nvim-notify",
+            config = function ()
+                vim.notify = require "notify"
+                require("notify").setup({
+                    icons = {
+                        ERROR = "",
+                        WARN = "",
+                        INFO = "",
+                        DEBUG = "",
+                        TRACE = "",
+                    },
+                })
+            end
+        }
+
+        use {
+            "github/copilot.vim",
+            event = "BufEnter",
+            config = function ()
+                vim.g.copilot_no_tab_map = true
+                vim.g.copilot_assume_mapped = true
+            end
+        }
+
+        use { "elkowar/yuck.vim" }
         use { "voldikss/vim-floaterm" }
         use { "cohama/lexima.vim" }
         use { "andweeb/presence.nvim" }
-        use { "tweekmonster/startuptime.vim" }
     end
 )
