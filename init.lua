@@ -1,8 +1,8 @@
 require "options"
+require "impatient"
 
 local async
-async =
-    vim.loop.new_async(
+async = vim.loop.new_async(
         vim.schedule_wrap(
             function ()
                 require "plugins.init"

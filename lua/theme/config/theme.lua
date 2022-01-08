@@ -14,8 +14,10 @@ theme.colors = {
     -- Alternative colors
     bgAlt = "#101415",
     bgAlt2 = "#131718",
+    bgAlt3 = "#151a1c",
     fgAlt = "#c4c4c4",
     fgAlt2 = "#b7b8b8",
+    funnyGreen = "#91e6b1",
 
     -- Base16
     base00 = "#101415",

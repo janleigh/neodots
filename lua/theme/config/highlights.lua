@@ -59,10 +59,7 @@ fgbg("GitSignsChangeDelete", red, _bg)
 fgbg("GitSignsDelete", red, _bg)
 
 -- Indent
-fg("IndentBlanklineChar", bgAlt)
-
--- Floaterm
-bg("FloatermBorder", _bg)
+fg("IndentBlanklineChar", colors.base01)
 
 -- NvimTree
 fg("NvimTreeFolderIcon", blue)
@@ -74,7 +71,7 @@ fg("NvimTreeExecFile", _fg)
 fg("NvimTreeGitDirty", red)
 fg("NvimTreeGitDeleted", red)
 fg("NvimTreeRootFolder", blue)
-fg("NvimTreeIndentMarker", _fg)
+fg("NvimTreeIndentMarker", colors.base01)
 bg("NvimTreeNormal", bgAlt2)
 fgbg("NvimTreeVertSplit", _bg, _bg)
 fgbg("NvimTreeStatusLine", _bg, _bg)
@@ -82,6 +79,6 @@ fgbg("NvimTreeEndOfBuffer", bgAlt2, bgAlt2)
 vim.cmd("hi NvimTreeStatusLineNC gui=underline guifg=" .. bgAlt2 .. " guibg=" .. _bg)
 
 -- Telescope
-fg("TelescopeBorder", bgAlt2)
+fg("TelescopeBorder", colors.base01)
 
 vim.cmd("hi typescriptParens guibg=none")

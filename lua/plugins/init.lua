@@ -9,7 +9,13 @@ return packer.startup(
             event = "VimEnter"
         }
 
-        use { "lewis6991/impatient.nvim" }
+        use {
+            "lewis6991/impatient.nvim",
+            config = {
+                -- Move to lua dir so impatient.nvim can cache it
+                compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua"
+            }
+        }
 
         -- LSP and autocompletion
         use {
@@ -17,6 +23,7 @@ return packer.startup(
             requires = {
                 -- LSP
                 "neovim/nvim-lspconfig",
+                "ray-x/lsp_signature.nvim",
 
                 -- Miscellaneous
                 "hrsh7th/cmp-nvim-lsp",
@@ -25,21 +32,18 @@ return packer.startup(
                 "onsails/lspkind-nvim"
             },
             config = function ()
-                require "plugins.configs.completion"
+                require "plugins.configs.cmp"
             end
         }
 
         use {
-            "rafamadriz/friendly-snippets",
-            event = "InsertEnter"
-        }
-
-        use {
             "L3MON4D3/LuaSnip",
-            wants = "friendly-snippets",
+            requires = {
+                "rafamadriz/friendly-snippets"
+            },
             after = "nvim-cmp",
             config = function ()
-                require("luasnip/loaders/from_vscode").load { path = "~/.local/share/nvim/site/pack/packer/opt/friendly-snippets" }
+                require("luasnip/loaders/from_vscode").load { path = "~/.local/share/nvim/site/pack/packer/start/friendly-snippets" }
                 require("luasnip/loaders/from_vscode").load()
             end
         }
@@ -48,7 +52,38 @@ return packer.startup(
             "williamboman/nvim-lsp-installer",
             after = "nvim-cmp",
             config = function ()
-                require "plugins.configs.lspconfig"
+                local lsp_installer = require("nvim-lsp-installer")
+
+                lsp_installer.on_server_ready(function(server)
+                    local opts = {
+                        on_attach = on_attach,
+                        capabilities = capabilities
+                    }
+
+                    local server_opts = {
+                        ["sumneko_lua"] = function ()
+                            opts.settings = {
+                                Lua = {
+                                    runtime = {
+                                        version = "LuaJIT"
+                                    },
+                                    diagnostics = {
+                                        globals = { "vim" }
+                                    },
+                                    workspace = {
+                                        library = vim.api.nvim_get_runtime_file("", true)
+                                    }
+                                }
+                            }
+
+                            opts.on_attach = on_attach
+                            opts.capabilities = capabilities
+
+                            return server_opts
+                        end,
+                    }
+                    server:setup(server_opts[server.name] and server_opts[server.name]() or opts)
+                end)
             end
         }
 
@@ -62,6 +97,7 @@ return packer.startup(
 
         -- GUI Plugins
         use { "akinsho/nvim-bufferline.lua" }
+        use { "kyazdani42/nvim-web-devicons" }
 
         use {
             "glepnir/galaxyline.nvim",
@@ -92,13 +128,6 @@ return packer.startup(
             end
         }
 
-        use {
-            "kyazdani42/nvim-web-devicons",
-            config = function()
-                require "plugins.configs.devicons"
-            end
-        }
-
         -- Miscellaneous
         use {
             "norcalli/nvim-base16.lua",
@@ -118,29 +147,18 @@ return packer.startup(
         }
 
         use {
-            "norcalli/nvim-colorizer.lua",
-            event = "BufRead",
-            config = function ()
-                require("colorizer").setup({ "*" }, {
-                    RGB = true,
-                    RRGGBB = true,
-                    css = true,
-
-                    mode = "background"
-                })
-                vim.cmd "ColorizerReloadAllBuffers"
-            end
-        }
-
-        use {
             "lukas-reineke/indent-blankline.nvim",
             config = function ()
                 require("indent_blankline").setup {
                     filetype_exclude = {
+                        "help",
+                        "terminal",
                         "dashboard",
                         "packer",
+                        "lspinfo",
                         "TelescopePrompt",
-                        "TelescopeResults"
+                        "TelescopeResults",
+                        "startup-log.txt"
                     }
                 }
                 end
@@ -149,7 +167,7 @@ return packer.startup(
         use {
             "LionC/nest.nvim",
             config = function ()
-                require "plugins.configs.nest"
+                require "plugins.configs.keybinds"
             end
         }
 
@@ -178,9 +196,11 @@ return packer.startup(
             end
         }
 
-        use { "elkowar/yuck.vim" }
-        use { "voldikss/vim-floaterm" }
+        use { "tweekmonster/startuptime.vim" }
+        use { "folke/trouble.nvim" }
         use { "cohama/lexima.vim" }
+        use { "Pocco81/AutoSave.nvim" }
+        use { "numToStr/Comment.nvim" }
         use { "andweeb/presence.nvim" }
     end
 )

@@ -19,17 +19,25 @@ gls.left[1] = {
     ViMode = {
         provider = function()
             local alias = {
-                n = colors.blue,
-                i = colors.green,
-                c = colors.red,
-                V = colors.magenta,
-                [''] = colors.magenta,
-                v = colors.magenta,
-                R = colors.yellow,
+                n = "NORMAL",
+                i = "INSERT",
+                c = "COMMAND",
+                V = "VISUAL",
+                ["^V"] = "VISUAL",
+                v = "VISUAL",
+                R = "REPLACE",
+                t = "TERMINAL",
+                s = "SNIPPET"
             }
 
-            vim.api.nvim_command("hi GalaxyViMode gui=bold guifg=" .. colors.bg .. " guibg=" .. alias[vim.fn.mode()])
-            return "  ❖  "
+            vim.api.nvim_command("hi GalaxyViMode guibg=" .. colors.funnyGreen .. " guifg=" .. colors.bg)
+
+            local alias_mode = alias[vim.fn.mode()]
+            if alias_mode == nil then
+                alias_mode = vim.fn.mode()
+            end
+
+            return '  ' .. alias_mode .. ' '
         end,
         separator = " ",
         separator_highlight = { colors.bgAlt2, colors.bgAlt2 },
