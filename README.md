@@ -7,8 +7,8 @@
 </div>
 
 <div align="center">
-    <img src="https://cdn.xndr.tech/u/wJ46w6l.png">
-    <img src="https://cdn.xndr.tech/u/ih9V0vr.png">
+    <img src="https://cdn.xndr.tech/u/IMXFM28.png">
+    <img src="https://cdn.xndr.tech/u/8y0y6tR.png">
 </div>
 
 ### ❖ Installation
@@ -16,7 +16,7 @@
    * First, install [packer.nvim](https://github.com/wbthomason/packer.nvim).
    * Then, clone this repo to `$HOME/.config/nvim`.
    ```
-     $ git clone https://github.com/TheRealKizu/neodots $HOME/.config/nvim
+     $ git clone https://github.com/janleigh/neodots $HOME/.config/nvim
    ```
    * Run `:PackerSync` and restart nvim.
 
@@ -26,4 +26,4 @@
 
 ### ❖ Credits
 
-   * [siduck76/NvChad](https://github.com/siduck76/NvChad) for some functions used in the config.
+   * [siduck76/NvChad](https://github.com/siduck76/NvChad) and [TorchedSammy/dotfiles](https://github.com/TorchedSammy/dotfiles) for some functions used in the config.
