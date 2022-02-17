@@ -4,12 +4,12 @@ local theme = {  }
 theme.colors = {
     bg = "#101415",
     fg = "#C5C8C9",
-    red = "#f65b5b",
-    green = "#8dc776",
-    yellow = "#e7ac7e",
-    blue = "#84a0c6",
-    magenta = "#bb8fe5",
-    cyan = "#89b8c2",
+    red = "#ee6a70",
+    green = "#96d6b0",
+    yellow = "#ffb29b",
+    blue = "#7ba5dd",
+    magenta = "#cb92f2",
+    cyan = "#7fc8db",
 
     -- Alternative colors
     bgAlt = "#101415",
@@ -51,12 +51,12 @@ local b0D = strip_hash(c.magenta)
 local b0E = strip_hash(c.cyan)
 
 -- Set neovim theme.
-base16.themes["neodots"] = {
+base16.themes["kizu"] = {
     base00 = b00; base01 = b01; base02 = b02; base03 = b03;
     base04 = b04; base05 = b05; base06 = b06; base07 = b07;
     base08 = b08; base09 = b09; base0A = "e79c61"; base0B = b0B;
     base0C = b0C; base0D = b0D; base0E = b0E; base0F = "d65d0e";
 }
 
-base16(base16.themes["neodots"], true)
+base16(base16.themes["kizu"], true)
 return theme

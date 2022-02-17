@@ -24,7 +24,7 @@ g.dashboard_custom_header = {
 }
 
 g.dashboard_custom_section = {
-    a = { description = { "  Find File                 SPC f f" }, command = "Telescope find_files" },
-    b = { description = { "洛 New File                  SPC f n" }, command = "DashboardNewFile" },
+    a = { description = { "  Open File                 SPC f f" }, command = "Telescope find_files" },
+    b = { description = { "  New File                  SPC f n" }, command = "DashboardNewFile" },
     c = { description = { "  Quit Neovim                 SPC q" }, command = "q!" }
 }
