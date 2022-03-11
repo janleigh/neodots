@@ -2,13 +2,13 @@
 
 <div align="center">
 
-   <code>neodots</code> ~ my neovim config. now in lua.
-
+   <code>neodots</code> ~ my neovim configuration.
 </div>
 
 <div align="center">
-    <img src="https://cdn.xndr.tech/u/IMXFM28.png">
-    <img src="https://cdn.xndr.tech/u/8y0y6tR.png">
+   <img src="https://cdn.xndr.tech/u/6a1nam6.png">
+   <img src="https://cdn.xndr.tech/u/pBKqsxR.png">
+   <img src="https://cdn.xndr.tech/u/ErZjaAS.png">
 </div>
 
 ### ❖ Installation
@@ -20,9 +20,9 @@
    ```
    * Run `:PackerSync` and restart nvim.
 
-### ❖ Keymap
+### ❖ Keybinds
 
-   `Soon! <3`
+   * To be documented. For now, refer to [keybinds.lua](lua/core/keybinds.lua) instead.
 
 ### ❖ Credits
 

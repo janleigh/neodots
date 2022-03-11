@@ -8,7 +8,7 @@ vim.cmd([[
 ]])
 
 -- General stuff
-g.mapleader = ","
+g.mapleader = " "
 g.encoding = "utf8"
 opt.ruler = false
 opt.showmode = false

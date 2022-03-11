@@ -28,20 +28,37 @@ end
 nest.applyKeymaps {
     -- Turn off highlight search
     { "<Esc>", "<cmd>noh<CR>", mode = "nv" },
+    -- Easier cmd mode
+    { ";", ";", mode = "nv" },
+    -- Easier escape
+    { "jk", "<esc>", mode = "v" },
+    { "jk", "<C-c>", mode = "c" },
 
     { mode = "n", {
         -- Editor
         { "<C-s>", "<cmd>silent w<CR>" },
         { "<C-z>", "<cmd>u<CR>" },
-        { "<S-t>", "<cmd>:call v:lua.openTerm('vterminal', v:true)<CR>" },
+        { "<F10>", "<cmd>:call v:lua.openTerm('vterminal', v:true)<CR>" },
+
+        -- Easier Window Navigation
+        { "<C-h>", "<C-w>h" },
+        { "<C-j>", "<C-w>j" },
+        { "<C-k>", "<C-w>k" },
+        { "<C-l>", "<C-w>l" },
+
+        -- Easy resizing split windows
+        { "<C-Up>", "<cmd>:resize +2<CR>" },
+        { "<C-Down>", "<cmd>:resize -2<CR>" },
+        { "<C-Left>", "<cmd>:vertical resize +2<CR>" },
+        { "<C-Right>", "<cmd>:vertical resize -2<CR>" },
 
         -- Trouble
         { "<C-x>", "<cmd>TroubleToggle<CR>" },
 
         -- Bufferline
-        { "<Tab>", "<cmd>BufferLineCycleNext<CR>" },
-        { "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>" },
-        { "<C-w>", "<cmd>bd!<CR>" },
+        { "<S-h>", "<cmd>BufferLineCycleNext<CR>" },
+        { "<S-l>", "<cmd>BufferLineCyclePrev<CR>" },
+        { "<S-q>", "<cmd>bd!<CR>" },
 
         -- nvim-tree
         { "<C-n>", "<cmd>NvimTreeToggle<CR>" },

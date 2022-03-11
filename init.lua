@@ -1,4 +1,4 @@
-require "options"
+require "core.options"
 require "impatient"
 
 local async
@@ -6,7 +6,7 @@ async = vim.loop.new_async(
         vim.schedule_wrap(
             function ()
                 require "plugins.init"
-                require "plugins.configs.bufferline"
+                require "plugins.configs.nvim-bufferline"
 
                 require "theme.init"
 

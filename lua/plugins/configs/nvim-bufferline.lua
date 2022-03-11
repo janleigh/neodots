@@ -4,7 +4,7 @@ local colors = theme.colors
 
 bufferline.setup {
     options = {
-        offsets = {{ filetype = "NvimTree", text = "", padding = 1, highlight = "Directory" }},
+        offsets = {{ filetype = "NvimTree", text = "", padding = 1, highlight = "BufferlineDirectory" }},
         indicator_icon = "",
 
         close_icon = "",
@@ -21,7 +21,7 @@ bufferline.setup {
         },
         fill = {
             guifg = colors.fgAlt,
-            guibg = colors.bg
+            guibg = colors.darkerBg
         },
 
         -- Buffer
@@ -52,7 +52,7 @@ bufferline.setup {
         -- Separator
         separator = {
             guifg = colors.bg,
-            guibg = colors.bg
+            guibg = colors.darkerBg
         },
 
         -- Duplicate

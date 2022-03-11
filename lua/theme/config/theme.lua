@@ -2,7 +2,7 @@ local base16 = require("base16")
 local theme = {  }
 
 theme.colors = {
-    bg = "#101415",
+    bg = "#0b0f10",
     fg = "#C5C8C9",
     red = "#ee6a70",
     green = "#96d6b0",
@@ -12,15 +12,17 @@ theme.colors = {
     cyan = "#7fc8db",
 
     -- Alternative colors
-    bgAlt = "#101415",
-    bgAlt2 = "#131718",
-    bgAlt3 = "#151a1c",
+    darkerBg = "#080c0d",
+    darkestBg = "#05090a",
+    bgAlt = "#0b0f10",
+    bgAlt2 = "#101415",
+    bgAlt3 = "#131718",
     fgAlt = "#c4c4c4",
     fgAlt2 = "#b7b8b8",
     funnyGreen = "#91e6b1",
 
     -- Base16
-    base00 = "#101415",
+    base00 = "#0b0f10",
     base01 = "#26292a",
     base02 = "#3e4141",
     base03 = "#6e7071",

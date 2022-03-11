@@ -32,7 +32,7 @@ return packer.startup(
                 "onsails/lspkind-nvim"
             },
             config = function ()
-                require "plugins.configs.cmp"
+                require "plugins.configs.completion"
             end
         }
 
@@ -56,7 +56,9 @@ return packer.startup(
 
                 lsp_installer.on_server_ready(function(server)
                     local opts = {
+                        --- @diagnostic disable-next-line: undefined-global
                         on_attach = on_attach,
+                        --- @diagnostic disable-next-line: undefined-global
                         capabilities = capabilities
                     }
 
@@ -76,9 +78,12 @@ return packer.startup(
                                 }
                             }
 
+                            --- @diagnostic disable-next-line: undefined-global
                             opts.on_attach = on_attach
+                            --- @diagnostic disable-next-line: undefined-global
                             opts.capabilities = capabilities
 
+                            --- @diagnostic disable-next-line: undefined-global
                             return server_opts
                         end,
                     }
@@ -116,6 +121,7 @@ return packer.startup(
         use {
             "kyazdani42/nvim-tree.lua",
             config = function()
+            --- @diagnostic disable-next-line: different-requires
                 require "plugins.configs.nvim-tree"
             end
         }
@@ -124,6 +130,7 @@ return packer.startup(
             "nvim-telescope/telescope.nvim",
             requires = {{ "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" }},
             config = function()
+                --- @diagnostic disable-next-line: different-requires
                 require "plugins.configs.telescope"
             end
         }
@@ -167,23 +174,7 @@ return packer.startup(
         use {
             "LionC/nest.nvim",
             config = function ()
-                require "plugins.configs.keybinds"
-            end
-        }
-
-        use {
-            "rcarriga/nvim-notify",
-            config = function ()
-                vim.notify = require "notify"
-                require("notify").setup({
-                    icons = {
-                        ERROR = "",
-                        WARN = "",
-                        INFO = "",
-                        DEBUG = "",
-                        TRACE = "",
-                    },
-                })
+                require "core.keybinds"
             end
         }
 

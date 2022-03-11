@@ -1,3 +1,4 @@
+--- @diagnostic disable-next-line: different-requires
 local ts = require("telescope")
 
 ts.setup {
@@ -7,11 +8,11 @@ ts.setup {
             "--no-heading",
             "--smart-case"
         },
-        prompt_prefix = " ",
-        selection_caret = " ",
+        prompt_prefix = "   ",
+        selection_caret = "  ",
         layout_config = {
             horizontal = {
-                prompt_position = "bottom",
+                prompt_position = "top",
                 preview_width = 0.55,
                 results_width = 0.8,
             },
@@ -22,7 +23,7 @@ ts.setup {
             height = 0.80,
             preview_cutoff = 120,
         },
-        borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+        borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
         file_ignore_patterns = { "node_modules", "build", "dist", "target", ".git" }
     }
 }
