@@ -187,10 +187,8 @@ return packer.startup(
             end
         }
 
-        use { "tweekmonster/startuptime.vim" }
         use { "folke/trouble.nvim" }
         use { "cohama/lexima.vim" }
-        use { "Pocco81/AutoSave.nvim" }
         use { "numToStr/Comment.nvim" }
         use { "andweeb/presence.nvim" }
     end
