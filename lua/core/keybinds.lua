@@ -56,8 +56,8 @@ nest.applyKeymaps {
         { "<C-x>", "<cmd>TroubleToggle<CR>" },
 
         -- Bufferline
-        { "<S-h>", "<cmd>BufferLineCycleNext<CR>" },
-        { "<S-l>", "<cmd>BufferLineCyclePrev<CR>" },
+        { "<S-h>", "<cmd>BufferLineCyclePrev<CR>" },
+        { "<S-l>", "<cmd>BufferLineCycleNext<CR>" },
         { "<S-q>", "<cmd>bd!<CR>" },
 
         -- nvim-tree
