@@ -3,21 +3,29 @@ local opt = vim.opt
 
 vim.cmd([[
     set guicursor=
-    set cursorline
     filetype plugin off
 ]])
 
 -- General stuff
 g.mapleader = " "
 g.encoding = "utf8"
+opt.mouse = "a"
+opt.hidden = true
 opt.ruler = false
+opt.cursorline = true
+opt.number = true
+opt.relativenumber = false
 opt.showmode = false
 opt.termguicolors = true
-opt.mouse = "a"
-opt.number = true
-opt.shortmess = "c"
-opt.completeopt = "menuone,noinsert"
 opt.updatetime = 300
+opt.cmdheight = 1
+opt.pumheight = 10
+opt.scrolloff = 8
+opt.sidescrolloff = 8
+opt.clipboard = "unnamedplus"
+opt.completeopt = "menuone,noinsert"
+opt.signcolumn = "yes"
+opt.shortmess = "F"
 
 -- Indent
 opt.autoindent = true

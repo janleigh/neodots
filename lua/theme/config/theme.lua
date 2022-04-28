@@ -14,9 +14,9 @@ theme.colors = {
     -- Alternative colors
     darkerBg = "#080c0d",
     darkestBg = "#05090a",
-    bgAlt = "#0b0f10",
-    bgAlt2 = "#101415",
-    bgAlt3 = "#131718",
+    bgAlt = "#101415",
+    bgAlt2 = "#131718",
+    bgAlt3 = "#151a1c",
     fgAlt = "#c4c4c4",
     fgAlt2 = "#b7b8b8",
     funnyGreen = "#91e6b1",

@@ -1,7 +1,9 @@
---- @diagnostic disable-next-line: different-requires
-local ts = require("telescope")
+local present, telescope = pcall(require, "telescope")
+if not present then
+    return
+end
 
-ts.setup {
+telescope.setup({
     defaults = {
         vimgrep_arguments = {
             "rg",
@@ -16,7 +18,7 @@ ts.setup {
                 preview_width = 0.55,
                 results_width = 0.8,
             },
-                vertical = {
+            vertical = {
                 mirror = false,
             },
             width = 0.87,
@@ -26,4 +28,4 @@ ts.setup {
         borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
         file_ignore_patterns = { "node_modules", "build", "dist", "target", ".git" }
     }
-}
+})

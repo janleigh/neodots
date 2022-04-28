@@ -1,4 +1,8 @@
-local packer = require("packer")
+local present, packer = pcall(require, "packer")
+if not present then
+    return
+end
+
 local use = packer.use
 
 return packer.startup(
@@ -21,14 +25,13 @@ return packer.startup(
         use {
             "hrsh7th/nvim-cmp",
             requires = {
-                -- LSP
                 "neovim/nvim-lspconfig",
                 "ray-x/lsp_signature.nvim",
 
-                -- Miscellaneous
                 "hrsh7th/cmp-nvim-lsp",
                 "hrsh7th/cmp-buffer",
                 "hrsh7th/cmp-path",
+                "hrsh7th/cmp-cmdline",
                 "onsails/lspkind-nvim"
             },
             config = function ()
@@ -38,74 +41,26 @@ return packer.startup(
 
         use {
             "L3MON4D3/LuaSnip",
-            requires = {
-                "rafamadriz/friendly-snippets"
-            },
-            after = "nvim-cmp",
-            config = function ()
-                require("luasnip/loaders/from_vscode").load { path = "~/.local/share/nvim/site/pack/packer/start/friendly-snippets" }
-                require("luasnip/loaders/from_vscode").load()
-            end
+            requires = "rafamadriz/friendly-snippets",
         }
 
         use {
             "williamboman/nvim-lsp-installer",
             after = "nvim-cmp",
             config = function ()
-                local lsp_installer = require("nvim-lsp-installer")
-
-                lsp_installer.on_server_ready(function(server)
-                    local opts = {
-                        --- @diagnostic disable-next-line: undefined-global
-                        on_attach = on_attach,
-                        --- @diagnostic disable-next-line: undefined-global
-                        capabilities = capabilities
-                    }
-
-                    local server_opts = {
-                        ["sumneko_lua"] = function ()
-                            opts.settings = {
-                                Lua = {
-                                    runtime = {
-                                        version = "LuaJIT"
-                                    },
-                                    diagnostics = {
-                                        globals = { "vim" }
-                                    },
-                                    workspace = {
-                                        library = vim.api.nvim_get_runtime_file("", true)
-                                    }
-                                }
-                            }
-
-                            --- @diagnostic disable-next-line: undefined-global
-                            opts.on_attach = on_attach
-                            --- @diagnostic disable-next-line: undefined-global
-                            opts.capabilities = capabilities
-
-                            --- @diagnostic disable-next-line: undefined-global
-                            return server_opts
-                        end,
-                    }
-                    server:setup(server_opts[server.name] and server_opts[server.name]() or opts)
-                end)
+                require "plugins.configs.lsp_installer"
             end
         }
 
         -- Git
-        use {
-            "lewis6991/gitsigns.nvim",
-            config = function()
-                require("gitsigns").setup{}
-            end
-        }
+        use { "lewis6991/gitsigns.nvim" }
 
         -- GUI Plugins
-        use { "akinsho/nvim-bufferline.lua" }
+        use { "akinsho/bufferline.nvim", tag = "*" }
         use { "kyazdani42/nvim-web-devicons" }
 
         use {
-            "glepnir/galaxyline.nvim",
+            "NTBBloodbath/galaxyline.nvim",
             config = function()
                 require "plugins.configs.statusline"
             end
@@ -121,8 +76,7 @@ return packer.startup(
         use {
             "kyazdani42/nvim-tree.lua",
             config = function()
-            --- @diagnostic disable-next-line: different-requires
-                require "plugins.configs.nvim-tree"
+                require "plugins.configs.nvim_tree"
             end
         }
 
@@ -130,12 +84,15 @@ return packer.startup(
             "nvim-telescope/telescope.nvim",
             requires = {{ "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" }},
             config = function()
-                --- @diagnostic disable-next-line: different-requires
                 require "plugins.configs.telescope"
             end
         }
 
         -- Miscellaneous
+        use { "cohama/lexima.vim" }
+        use { "numToStr/Comment.nvim" }
+        use { "andweeb/presence.nvim" }
+
         use {
             "norcalli/nvim-base16.lua",
             requires = {{ "norcalli/nvim.lua" }}
@@ -145,30 +102,15 @@ return packer.startup(
             "nvim-treesitter/nvim-treesitter",
             run = ":TSUpdate",
             config = function ()
-                require("nvim-treesitter.configs").setup {
-                    highlight = {
-                        enable = true
-                    }
-                }
+                require "plugins.configs.treesitter"
             end
         }
 
         use {
             "lukas-reineke/indent-blankline.nvim",
             config = function ()
-                require("indent_blankline").setup {
-                    filetype_exclude = {
-                        "help",
-                        "terminal",
-                        "dashboard",
-                        "packer",
-                        "lspinfo",
-                        "TelescopePrompt",
-                        "TelescopeResults",
-                        "startup-log.txt"
-                    }
-                }
-                end
+                require "plugins.configs.indent_blankline"
+            end
         }
 
         use {
@@ -182,14 +124,36 @@ return packer.startup(
             "github/copilot.vim",
             event = "BufEnter",
             config = function ()
-                vim.g.copilot_no_tab_map = true
-                vim.g.copilot_assume_mapped = true
+                require "plugins.configs.copilot"
             end
         }
 
-        use { "folke/trouble.nvim" }
-        use { "cohama/lexima.vim" }
-        use { "numToStr/Comment.nvim" }
-        use { "andweeb/presence.nvim" }
+        use {
+            "sunjon/shade.nvim",
+            config = function ()
+                require "plugins.configs.shade"
+            end
+        }
+
+        use {
+            "folke/twilight.nvim",
+            config = function ()
+                require "plugins.configs.twilight"
+            end
+        }
+
+        use {
+            "rcarriga/nvim-notify",
+            config = function ()
+                require "plugins.configs.notify"
+            end
+        }
+
+        use {
+            "akinsho/toggleterm.nvim",
+            config = function ()
+                require "plugins.configs.terminal"
+            end
+        }
     end
 )
