@@ -129,13 +129,6 @@ return packer.startup(
         }
 
         use {
-            "sunjon/shade.nvim",
-            config = function ()
-                require "plugins.configs.shade"
-            end
-        }
-
-        use {
             "folke/twilight.nvim",
             config = function ()
                 require "plugins.configs.twilight"

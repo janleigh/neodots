@@ -23,6 +23,10 @@ nest.applyKeymaps {
         { "<C-k>", "<C-w>k" },
         { "<C-l>", "<C-w>l" },
 
+        -- Easy splitting windows
+        { "hs", "<cmd>split<CR>" },
+        { "vs", "<cmd>vsplit<CR>" },
+
         -- Easy resizing split windows
         { "<C-S-Up>", "<cmd>:resize +2<CR>" },
         { "<C-S-Down>", "<cmd>:resize -2<CR>" },
@@ -30,9 +34,9 @@ nest.applyKeymaps {
         { "<C-S-Right>", "<cmd>:vertical resize -2<CR>" },
 
         -- Bufferline
-        { "<A-q>", "<cmd>:bd!<CR>" },
-        { "<S-h>", "<cmd>BufferLineCycleNext<CR>" },
-        { "<S-l>", "<cmd>BufferLineCyclePrev<CR>" },
+        { "<S-w>", "<cmd>:bd!<CR>" },
+        { "<Tab>", "<cmd>BufferLineCycleNext<CR>" },
+        { "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>" },
 
         -- nvim-tree
         { "<C-n>", "<cmd>NvimTreeToggle<CR>" },
@@ -43,6 +47,7 @@ nest.applyKeymaps {
     }},
 
     { mode = "v", {
+        { "<C-s>", "<ESC>:w<CR><Insert>" },
         { "<C-c>", "<cmd>silent w !xclip -i -sel c<CR>" },
         { "<Leader>/", ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>" }
     }},

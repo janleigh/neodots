@@ -25,7 +25,7 @@ _M.options = {
 _M.highlights = {
     background = {
         guifg = colors.fgAlt2,
-        guibg = colors.bgAlt2
+        guibg = colors.darkerBg
     },
     fill = {
         guifg = colors.fgAlt,
@@ -50,11 +50,11 @@ _M.highlights = {
     },
     modified_selected = {
         guifg = colors.red,
-        guibg = colors.darkerBg
+        guibg = colors.bgAlt
     },
     modified_visible = {
         guifg = colors.yellow,
-        guibg = colors.bgAlt2
+        guibg = colors.darkerBg
     },
     indicator_selected = {
         guifg = colors.green,
@@ -78,7 +78,7 @@ _M.highlights = {
     -- Close Button
     close_button = {
         guifg = colors.base01,
-        guibg = colors.bgAlt2
+        guibg = colors.darkerBg
     },
     close_button_visible = {
         guifg = colors.base01,
