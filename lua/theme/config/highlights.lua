@@ -17,6 +17,7 @@ local magenta = colors.magenta
 local cyan = colors.cyan
 
 local dbFg = "#a89984"
+local folderFg= "#DCB67A"
 
 local function fg(group, color)
     vim.cmd("hi " .. group .. " guifg=" .. color)
@@ -36,7 +37,7 @@ vim.cmd("hi Comment gui=italic")
 bg("LineNr", _bg)
 bg("SignColumn", _bg)
 fg("EndOfBuffer", _bg)
-fgbg("VertSplit", bgAlt, bgAlt)
+fgbg("VertSplit", bgAlt, _bg)
 vim.cmd("hi StatusLineNC gui=underline guibg=NONE guifg=" .. bgAlt)
 
 -- CursorLine
@@ -66,7 +67,7 @@ fg("IndentBlanklineChar", colors.base01)
 bg("BufferlineDirectory", darkestBg)
 
 -- NvimTree
-fg("NvimTreeFolderIcon", yellow)
+fg("NvimTreeFolderIcon", folderFg)
 fg("NvimTreeFolderName", colors.base05)
 fg("NvimTreeOpenedFolderName", colors.base05)
 fg("NvimTreeEmptyFolderName", colors.base05)
@@ -77,7 +78,7 @@ fg("NvimTreeGitDeleted", red)
 fg("NvimTreeRootFolder", colors.base04)
 fg("NvimTreeIndentMarker", colors.base01)
 bg("NvimTreeNormal", darkestBg)
-fgbg("NvimTreeVertSplit", bgAlt, bgAlt)
+fgbg("NvimTreeVertSplit", darkestBg, darkestBg)
 fgbg("NvimTreeStatusLine", _bg, _bg)
 fgbg("NvimTreeEndOfBuffer", darkestBg, darkestBg)
 vim.cmd("hi NvimTreeStatusLineNC gui=underline guifg=" .. _bg .. " guibg=" .. _bg)

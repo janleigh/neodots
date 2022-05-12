@@ -26,7 +26,7 @@ nt.setup({
     },
     renderer = {
         indent_markers = {
-            enable = true
+            enable = false
         }
     },
     actions = {
