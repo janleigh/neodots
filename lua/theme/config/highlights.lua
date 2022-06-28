@@ -1,4 +1,4 @@
-local theme = require("theme.config.theme")
+local theme = require "theme.config.theme"
 local colors = theme.colors
 
 -- Colors
@@ -17,22 +17,22 @@ local magenta = colors.magenta
 local cyan = colors.cyan
 
 local dbFg = "#a89984"
-local folderFg= "#DCB67A"
+local folderFg = "#DCB67A"
 
 local function fg(group, color)
-    vim.cmd("hi " .. group .. " guifg=" .. color)
+	vim.cmd("hi " .. group .. " guifg=" .. color)
 end
 
 local function bg(group, color)
-    vim.cmd("hi " .. group .. " guibg=" .. color)
+	vim.cmd("hi " .. group .. " guibg=" .. color)
 end
 
 local function fgbg(group, fgcol, bgcol)
-    vim.cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
+	vim.cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
 end
 
 -- Italic Comments
-vim.cmd("hi Comment gui=italic")
+vim.cmd "hi Comment gui=italic"
 
 bg("LineNr", _bg)
 bg("SignColumn", _bg)
@@ -41,7 +41,7 @@ fgbg("VertSplit", bgAlt, _bg)
 vim.cmd("hi StatusLineNC gui=underline guibg=NONE guifg=" .. bgAlt)
 
 -- CursorLine
-vim.cmd("hi clear CursorLine")
+vim.cmd "hi clear CursorLine"
 fgbg("CursorLineNr", colors.base06, _bg)
 
 -- LSP
@@ -117,11 +117,11 @@ fgbg("NotifyTRACEBorder", bgAlt2, bgAlt2)
 fgbg("NotifyTRACETitle", magenta, bgAlt2)
 fgbg("NotifyTRACEIcon", magenta, bgAlt2)
 fgbg("NotifyTRACEBody", _fg, bgAlt2)
-vim.cmd("hi NotifySUCCESSTitle gui=italic")
-vim.cmd("hi NotifyINFOTitle gui=italic")
-vim.cmd("hi NotifyWARNTitle gui=italic")
-vim.cmd("hi NotifyERRORTitle gui=italic")
-vim.cmd("hi NotifyTRACETitle gui=italic")
+vim.cmd "hi NotifySUCCESSTitle gui=italic"
+vim.cmd "hi NotifyINFOTitle gui=italic"
+vim.cmd "hi NotifyWARNTitle gui=italic"
+vim.cmd "hi NotifyERRORTitle gui=italic"
+vim.cmd "hi NotifyTRACETitle gui=italic"
 
 -- Pmenu
 bg("Pmenu", bgAlt)
@@ -140,4 +140,4 @@ fg("CmpItemMenu", blue)
 -- bg("ToggleTerm1Normal", bgAlt2)
 -- bg("ToggleTerm1NormalFloat", bgAlt2)
 
-vim.cmd("hi typescriptParens guibg=none")
+vim.cmd "hi typescriptParens guibg=none"

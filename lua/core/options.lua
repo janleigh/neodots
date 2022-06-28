@@ -1,10 +1,10 @@
 local g = vim.g
 local opt = vim.opt
 
-vim.cmd([[
+vim.cmd [[
     set guicursor=
     filetype plugin off
-]])
+]]
 
 -- General stuff
 g.mapleader = " "
@@ -22,7 +22,6 @@ opt.cmdheight = 1
 opt.pumheight = 10
 opt.scrolloff = 8
 opt.sidescrolloff = 8
-opt.laststatus = 3
 opt.clipboard = "unnamedplus"
 opt.completeopt = "menuone,noinsert"
 opt.signcolumn = "yes"
@@ -46,30 +45,30 @@ opt.incsearch = true
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>hl"
 
-vim.cmd("set fillchars+=vert:│")
+vim.cmd "set fillchars+=vert:│"
 
 -- Disable built-in vim plugins
 local built_ins = {
-    "2html_plugin",
-    "getscript",
-    "getscriptPlugin",
-    "gzip",
-    "logipat",
-    "netrw",
-    "netrwPlugin",
-    "netrwSettings",
-    "netrwFileHandlers",
-    "matchit",
-    "tar",
-    "tarPlugin",
-    "rrhelper",
-    "spellfile_plugin",
-    "vimball",
-    "vimballPlugin",
-    "zip",
-    "zipPlugin",
+	"2html_plugin",
+	"getscript",
+	"getscriptPlugin",
+	"gzip",
+	"logipat",
+	"netrw",
+	"netrwPlugin",
+	"netrwSettings",
+	"netrwFileHandlers",
+	"matchit",
+	"tar",
+	"tarPlugin",
+	"rrhelper",
+	"spellfile_plugin",
+	"vimball",
+	"vimballPlugin",
+	"zip",
+	"zipPlugin",
 }
 
 for _, plugin in pairs(built_ins) do
-    g["loaded_" .. plugin] = 1
+	g["loaded_" .. plugin] = 1
 end

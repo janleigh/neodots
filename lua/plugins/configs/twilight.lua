@@ -1,13 +1,13 @@
 local present, twilight = pcall(require, "twilight")
 if not present then
-    return
+	return
 end
 
-twilight.setup({
-    exclude = {
-        "NvimTree",
-        "dashboard",
-        "TelescopePrompt",
-        "TelescopeResults",
-    }
-})
+twilight.setup {
+	exclude = {
+		"NvimTree",
+		"dashboard",
+		"TelescopePrompt",
+		"TelescopeResults",
+	},
+}

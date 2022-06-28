@@ -2,17 +2,21 @@
 
 <div align="center">
    <p></p>
-   <a href="https://github.com/janleigh/neodots/stargazers">
-      <img src="https://img.shields.io/github/stars/janleigh/neodots?color=%23ffb29b&labelColor=%23101415&style=for-the-badge">
+   <a href="">
+      <img src="https://img.shields.io/github/issues/janleigh/neodots?color=ffb29b&labelColor=1C2325&style=for-the-badge">
    </a>
-   <a href="https://github.com/janleigh/neodots/network/members/">
-      <img src="https://img.shields.io/github/forks/janleigh/neodots?color=%23A2B7EE&labelColor=%23101415&style=for-the-badge">
+   <a href="https://github.com/janleigh/neodots/stargazers">
+      <img src="https://img.shields.io/github/stars/janleigh/neodots?color=C9CBFF&labelColor=1C2325&style=for-the-badge">
    </a>
    <a href="https://github.com/janleigh/neodots/">
-      <img src="https://img.shields.io/github/repo-size/janleigh/neodots?color=%23ee6a70&labelColor=%23101415&style=for-the-badge">
+      <img src="https://img.shields.io/github/repo-size/janleigh/neodots?color=FCA2AA&labelColor=1C2325&style=for-the-badge">
    </a>
-   <a href="LICENSE.md">
-      <img src="https://img.shields.io/github/license/janleigh/neodots?color=cb92f2&labelColor=101415&style=for-the-badge">
+   <br>
+</div>
+<div align="center">
+   <p></p>
+   <a href="https://discord.gg/2RfJb3CVfb">
+      <img alt="Support Server" src="https://discord.com/api/guilds/853812920919261235/embed.png?style=banner2">
    </a>
    <br>
 </div>
